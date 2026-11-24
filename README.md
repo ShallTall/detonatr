@@ -15,4 +15,4 @@ python3 -m http.server 8000 --bind 0.0.0.0        # then open http://<your-compu
 ```
 
 The service worker only runs over HTTPS or localhost, so offline/install is testable on the deployed site, not over Wi-Fi.
-Bump `CACHE` in `sw.js` when you ship changes so installed copies refresh.
+Updates show on the next load; the cache is only used offline.

@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Detonatr Handbook</title>
+  <meta name="description" content="Official Defusal Compliance Handbook, Revision 47. For the Expert.">
+  <meta name="theme-color" content="#0b0d18">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Handbook">
+  <link rel="manifest" href="manual.webmanifest">
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icons/icon-180.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Outfit:wght@400;600;700;800;900&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+  <script type="module" src="js/manual.js"></script>
+</head>
+<body>
+  <main class="wrap">
+    <div class="topbar">
+      <div class="brand"><img class="logo" src="icons/icon.svg" alt=""><span>HAND<b>BOOK</b></span></div>
+      <button class="iconbtn" id="theme" aria-label="Theme">◐</button>
+    </div>
+
+    <form class="card" id="entry">
+      <h2>Official Defusal Compliance Handbook</h2>
+      <p class="muted">You are the Expert. Enter the device code your Defuser reads to you. Do not look at their screen; that is a policy violation and also cheating.</p>
+      <input class="field" id="codeIn" placeholder="TURKEY-482" autocomplete="off" autocapitalize="characters" spellcheck="false" aria-label="Device code">
+      <p class="error" id="codeErr" role="alert"></p>
+      <button class="btn primary">Retrieve handbook</button>
+      <p class="muted" style="margin:14px 0 0"><small>Playing the bomb instead? <a href="./">Open the device</a>.</small></p>
+    </form>
+
+    <article id="book" class="hidden"></article>
+  </main>
+</body>
+</html>

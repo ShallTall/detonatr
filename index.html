@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Detonatr</title>
+  <meta name="description" content="Explosives-as-a-service. A two-player satirical bomb defusal game: one defuses, one reads the handbook.">
+  <meta name="theme-color" content="#0b0d18">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Detonatr">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icons/icon-180.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Outfit:wght@400;600;700;800;900&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+  <script type="module" src="js/bomb.js"></script>
+</head>
+<body>
+  <main class="wrap">
+    <div class="topbar">
+      <div class="brand"><img class="logo" src="icons/icon.svg" alt=""><span>DETONAT<b>R</b></span></div>
+      <div>
+        <button class="iconbtn" id="sound" aria-label="Sound on">🔊</button>
+        <button class="iconbtn" id="theme" aria-label="Theme">◐</button>
+      </div>
+    </div>
+
+    <section id="setup">
+      <div class="card">
+        <h2>Explosives-as-a-Service</h2>
+        <p class="muted">You are the Defuser. Choose your settings, request a device, and read its code to your Expert. They open the <a href="manual.html">Compliance Handbook</a> on their own phone.</p>
+        <div class="label" id="diffLabel">Clearance level</div>
+        <div class="seg" id="diff" role="group" aria-labelledby="diffLabel"></div>
+        <div class="label" id="timeLabel">Time allotted</div>
+        <div class="seg" id="time" role="group" aria-labelledby="timeLabel"></div>
+        <div style="height:20px"></div>
+        <button class="btn primary" id="request">Request a device</button>
+      </div>
+      <form class="card" id="codeForm">
+        <h3>Have a code already?</h3>
+        <p class="muted">Replay a device, or swap roles with the same bomb.</p>
+        <input class="field" id="codeIn" placeholder="TURKEY-482" autocomplete="off" autocapitalize="characters" spellcheck="false" aria-label="Device code">
+        <p class="error" id="codeErr" role="alert"></p>
+        <button class="btn ghost">Load device</button>
+      </form>
+    </section>
+
+    <section id="ready" class="hidden">
+      <div class="card" style="text-align:center">
+        <div class="label">Your device code</div>
+        <div class="code" id="codeOut"></div>
+        <p class="muted" id="readyInfo"></p>
+        <p>Read this code aloud to your Expert. Start once their handbook is open.</p>
+        <button class="btn danger" id="arm">Review terms &amp; arm device</button>
+        <button class="btn ghost" id="back">Back</button>
+      </div>
+    </section>
+
+    <section id="game" class="hidden">
+      <div class="hud">
+        <div class="timer" id="timer" role="timer" aria-live="off"></div>
+        <div class="strikes" id="strikes" aria-label="Strikes"><span>✕</span><span>✕</span><span>✕</span></div>
+      </div>
+      <div class="card device" id="device"></div>
+      <div id="modules"></div>
+    </section>
+  </main>
+  <div id="layer"></div>
+</body>
+</html>

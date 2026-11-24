@@ -25,7 +25,7 @@ function boomSound() {
 }
 
 // ---------- Screens ----------
-const show = (id) => ['setup', 'ready', 'game'].forEach((s) => $('#' + s).classList.toggle('hidden', s !== id));
+const show = (id) => ['role', 'setup', 'ready', 'game'].forEach((s) => $('#' + s).classList.toggle('hidden', s !== id));
 
 function seg(el, labels, key) {
   const render = () => [...el.children].forEach((b, i) => b.setAttribute('aria-pressed', i === settings[key]));
@@ -314,6 +314,8 @@ seg($('#diff'), DIFFS.map((d) => d.name), 'diff');
 seg($('#time'), TIME_LABELS, 'time');
 $('#request').onclick = () => ready(makeCode(settings.diff, settings.time));
 $('#back').onclick = () => show('setup');
+$('#pickDefuser').onclick = () => show('setup');
+$('#switchRole').onclick = (e) => { e.preventDefault(); show('role'); };
 $('#codeForm').onsubmit = (e) => {
   e.preventDefault();
   const p = parseCode($('#codeIn').value);

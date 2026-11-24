@@ -1,5 +1,5 @@
 // Offline support: serve from cache, refresh the cache in the background.
-const CACHE = 'detonatr-v1';
+const CACHE = 'detonatr-v2';
 const FILES = ['./', 'index.html', 'manual.html', 'css/style.css', 'js/engine.js', 'js/content.js', 'js/ui.js', 'js/bomb.js', 'js/manual.js',
   'icons/icon.svg', 'icons/icon-180.png', 'icons/icon-192.png', 'icons/icon-512.png', 'manifest.webmanifest', 'manual.webmanifest'];
 

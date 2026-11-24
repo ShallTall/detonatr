@@ -29,10 +29,20 @@
       </div>
     </div>
 
-    <section id="setup">
+    <section id="role">
       <div class="card">
         <h2>Explosives-as-a-Service</h2>
-        <p class="muted">You are the Defuser. Choose your settings, request a device, and read its code to your Expert. They open the <a href="manual.html">Compliance Handbook</a> on their own phone.</p>
+        <p class="muted">Two players, two phones, one link. One of you defuses the bomb, the other reads the handbook. Stay on a call; no peeking at each other's screens.</p>
+        <div style="height:8px"></div>
+        <button class="btn danger" id="pickDefuser">💣 I'm the Defuser</button>
+        <a class="btn ghost" href="manual.html" style="text-decoration:none;margin-top:10px;color:var(--text)">📘 I'm the Expert</a>
+      </div>
+    </section>
+
+    <section id="setup" class="hidden">
+      <div class="card">
+        <h2>Defuser setup</h2>
+        <p class="muted">Choose your settings, request a device, and read its code to your Expert. <a href="#" id="switchRole">Switch role</a></p>
         <div class="label" id="diffLabel">Clearance level</div>
         <div class="seg" id="diff" role="group" aria-labelledby="diffLabel"></div>
         <div class="label" id="timeLabel">Time allotted</div>
